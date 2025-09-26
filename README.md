@@ -34,6 +34,11 @@ pip install -r requirements.txt
 
 If you have questions or need support, feel free to contact me : mariefelicia.beclin@gmail.com
 
+# Fundings
+
+This work is part of the DIGPHAT project which was supported by a grant to
+ (ANR-22-PESN-0017) from the National Research Agency (ANR), France, under the France 2030 program
+
 ## License
 
 MIT License © 2025  
