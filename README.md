@@ -19,8 +19,7 @@ superlearner_synthetic_data/
 
 ```bash
 git clone https://github.com/yourusername/superlearner_synthetic_data.git
-cd my-project
-
+```
 2. Make sure you have [Python](https://www.python.org/downloads/) installed.
 3. Install the necessary Python libraries:
 
