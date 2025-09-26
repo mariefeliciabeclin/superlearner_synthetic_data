@@ -29,6 +29,7 @@ pip install -r requirements.txt
 
 # Citation
 
+Marie-Félicia Beclin, Giulia Marchello, Jean-Baptiste Woillard, Julie Josse. Super learner for tabular synthetic data generation. 2025. ⟨hal-05285855⟩
 
 # Contact
 
