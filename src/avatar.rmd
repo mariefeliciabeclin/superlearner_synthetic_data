@@ -1,0 +1,167 @@
+# Avatar
+
+In this code we will vary the seed for avatar with a fix number of knn (here=5) and bootsptrap the Cox model
+The goal is to extract the variability of HR for a given dataset and between different seed to obtain the overall uncertainty
+
+
+## run a single Avatar knn=5
+
+We launch a single Avatar with knn=5 and a given seed and we compare the results to the original data
+
+```{r}
+data_normalized <- scale(original1)
+pca <- prcomp(data_normalized, scale. = FALSE)# pour selecitonner le nombre de cp rank. = 3
+
+```
+
+```{r}
+# Number of neighbors
+k <- 5  # Adjust this based on your requirement
+```
+
+algorithm
+
+```{r avatar basal knn5}
+pca_transformed_data <- pca$x
+knn_result <- get.knn(pca_transformed_data, k)
+
+generate_avatar_weights <- function(knn_result, pca_transformed_data, k) {
+  n <- nrow(pca_transformed_data)
+  avatar_weights <- matrix(nrow = n, ncol = k)
+ 
+  for (i in 1:n) {
+    # Step 1: Inverse of Distances
+    distances <- sqrt(rowSums((pca_transformed_data[knn_result$nn.index[i, ], ] - pca_transformed_data[i, ])^2))
+    inverse_distances <- 1 / distances
+   
+    # Step 2: Random Weights
+   
+    random_weights <- rexp(k, rate = 1)
+   
+    # Step 3: Contribution Factors
+   
+    shuffled_indices <- sample(k)
+    contribution_factors <- 1 / (2^shuffled_indices)
+   
+    # Step 4: Calculate Weights
+    weights <- inverse_distances * random_weights * contribution_factors
+   
+    # Step 5: Normalize Weights
+    normalized_weights <- weights / sum(weights)
+   
+    avatar_weights[i, ] <- normalized_weights
+  }
+ 
+  return(avatar_weights)
+}
+
+
+
+# Generate avatar weights
+ set.seed(12)
+avatar_weights <- generate_avatar_weights(knn_result, pca_transformed_data, k)
+```
+
+
+Generation of avatar in the latent space
+
+```{r}
+# Assuming pca_result, avatar_weights, knn_result$nn.index, and pca_transformed_data are already defined
+
+# Function to generate avatars in PCA space based on weights
+generate_avatars_pca_space <- function(pca_transformed_data, knn_indices, weights) {
+  n <- nrow(pca_transformed_data)
+  avatars_pca <- matrix(nrow = n, ncol = ncol(pca_transformed_data))
+ 
+  for (i in 1:n) {
+    weighted_avatars <- pca_transformed_data[knn_indices[i, ], ] * weights[i, ]
+    avatars_pca[i, ] <- colSums(weighted_avatars)
+  }
+ 
+  return(avatars_pca)
+}
+# Generate avatars in PCA space
+avatars_pca_space <- generate_avatars_pca_space(pca_transformed_data, knn_result$nn.index, avatar_weights)
+
+```
+
+Return to the initial scale
+
+```{r}
+# Assuming 'aids_pca' is the PCA object and 'avatars_pca_space' contains the avatars in PCA space
+# Inverse PCA transformation
+inverse_pca <- function(pca_object, pca_data) {
+  return(pca_data %*% t(pca_object$rotation) + matrix(pca_object$center, nrow = nrow(pca_data), ncol = ncol(pca_object$rotation), byrow = TRUE))
+}
+avatars_original_scale <- inverse_pca(pca, avatars_pca_space)
+
+# Assuming 'aids_data_normalized' contains the scaling attributes of the original data
+# Inverse normalization (if the original data was normalized)
+avatars_rescaled <- scale(avatars_original_scale, center = FALSE, scale = 1/attr(data_normalized, "scaled:scale"))
+avatars_rescaled <- sweep(avatars_rescaled, 2, attr(data_normalized, "scaled:center"), "+")
+
+
+```
+
+Transform into tibble
+
+```{r}
+avatars_tibble_knn5 <- as_tibble(avatars_rescaled) %>%
+  mutate(haplotype = round(haplotype, digits=0),
+         cyp3A5D = round(cyp3A5D, digits=0),
+         sexe_r  = round(sexe_r , digits=0),
+         sexe_d  = round(sexe_d , digits=0),
+         rejet_aigu  = round(rejet_aigu , digits=0),
+         event = round(event, digits=0)
+         # CYP3A4_1B = round(CYP3A4_1B, digits=0),
+         # MDR1_C1236T = round(MDR1_C1236T, digits=0),
+         # MDR1_G2677T = round(MDR1_G2677T, digits=0),
+         # MDR1_C3435T = round(MDR1_C3435T, digits=0)
+  )
+
+avatars_tibble_factor_knn5 <- as_tibble(avatars_rescaled) %>%
+  mutate(haplotype = round(haplotype, digits=0),
+         cyp3A5D = round(cyp3A5D, digits=0),
+         sexe_r  = round(sexe_r , digits=0),
+         sexe_d  = round(sexe_d , digits=0),
+         rejet_aigu  = round(rejet_aigu , digits=0),
+         event = round(event, digits=0)
+         # CYP3A4_1B = round(CYP3A4_1B, digits=0),
+         # MDR1_C1236T = round(MDR1_C1236T, digits=0),
+         # MDR1_G2677T = round(MDR1_G2677T, digits=0),
+         # MDR1_C3435T = round(MDR1_C3435T, digits=0)
+  ) %>%
+  mutate(haplotype = as.factor(haplotype),
+         cyp3A5D = as.factor(cyp3A5D),
+         sexe_r = as.factor(sexe_r),
+         sexe_d = as.factor(sexe_d),
+         # CYP3A4_1B = as.factor(CYP3A4_1B),
+         # MDR1_C1236T = as.factor(MDR1_C1236T),
+         # MDR1_G2677T = as.factor(MDR1_G2677T),
+         # MDR1_C3435T = as.factor(MDR1_C3435T),
+         rejet_aigu = as.factor(rejet_aigu))
+```
+
+Plot of the synthetic and original in the latent space
+
+```{r}
+# Combine original and synthetic data for visualization
+combined_data <- rbind(
+  original1 %>% mutate(DataType = 'Original'),
+  avatars_tibble_knn5 %>% mutate(DataType = 'Synthetic')
+)
+
+# Perform PCA on combined data
+combined_data_normalized <- scale(combined_data[, -which(names(combined_data) %in% c("DataType", "id"))])
+combined_pca <- prcomp(combined_data_normalized, scale. = FALSE)
+
+# Extract the first two principal components
+combined_pca_data <- data.frame(combined_pca$x[, 1:2])
+combined_pca_data$DataType <- combined_data$DataType
+
+# Plot PCA with color differentiation
+ggplot(combined_pca_data, aes(x = PC1, y = PC2, color = DataType)) +
+  geom_point(alpha = 0.8) +
+  theme_minimal() +
+  labs(title = "PCA Plot", x = "Principal Component 1", y = "Principal Component 2", color = "Data Type")
+````

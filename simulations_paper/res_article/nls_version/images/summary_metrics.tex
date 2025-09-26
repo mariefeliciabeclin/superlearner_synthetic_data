@@ -1,0 +1,37 @@
+\begin{tabular}{llllll}
+\toprule
+ & Metric & metric_dcr & metric_energy_scaled & metric_nndr & metric_wasserstein_scaled \\
+Dataset & Method &  &  &  &  \\
+\midrule
+\multirow[t]{9}{*}{Non Linear 200} & avatar_ncp=4 & \cellcolor{mygreen}0.095 ± 0.015 & 0.043 ± 0.003 & \cellcolor{mygreen}0.267 ± 0.040 & \cellcolor{mygreen}0.680 ± 0.019 \\
+ & mixture_energy & 0.158 ± 0.025 & 0.022 ± 0.006 & 0.275 ± 0.043 & 0.831 ± 0.036 \\
+ & mixture_wasserstein & 0.140 ± 0.021 & 0.022 ± 0.006 & 0.270 ± 0.038 & 0.817 ± 0.034 \\
+ & statis_dual_energy_eigen & 0.182 ± 0.018 & \cellcolor{mygreen}0.017 ± 0.005 & 0.362 ± 0.041 & 0.730 ± 0.033 \\
+ & statis_dual_energy_weight & 0.182 ± 0.019 & \cellcolor{mygreen}0.017 ± 0.005 & 0.360 ± 0.042 & 0.730 ± 0.033 \\
+ & statis_dual_wass_eigen & 0.118 ± 0.018 & 0.042 ± 0.008 & 0.319 ± 0.042 & 0.685 ± 0.020 \\
+ & statis_dual_wass_weight & 0.117 ± 0.019 & 0.042 ± 0.008 & 0.319 ± 0.042 & 0.685 ± 0.020 \\
+ & synthpop_cart & 0.162 ± 0.023 & \cellcolor{mygreen}0.017 ± 0.005 & 0.328 ± 0.047 & 0.735 ± 0.033 \\
+ & synthpop_norm & \cellcolor{myred}0.436 ± 0.033 & \cellcolor{myred}0.064 ± 0.009 & \cellcolor{myred}0.551 ± 0.038 & \cellcolor{myred}1.279 ± 0.035 \\
+\cline{1-6}
+\multirow[t]{9}{*}{Non Linear 500} & avatar_ncp=4 & \cellcolor{mygreen}0.077 ± 0.008 & 0.015 ± 0.001 & 0.268 ± 0.026 & \cellcolor{mygreen}0.487 ± 0.010 \\
+ & mixture_energy & 0.119 ± 0.012 & 0.009 ± 0.003 & 0.257 ± 0.027 & 0.616 ± 0.017 \\
+ & mixture_wasserstein & 0.112 ± 0.011 & 0.008 ± 0.002 & \cellcolor{mygreen}0.253 ± 0.029 & 0.629 ± 0.016 \\
+ & statis_dual_energy_eigen & 0.135 ± 0.012 & \cellcolor{mygreen}0.007 ± 0.002 & 0.347 ± 0.032 & 0.557 ± 0.018 \\
+ & statis_dual_energy_weight & 0.133 ± 0.012 & \cellcolor{mygreen}0.007 ± 0.002 & 0.341 ± 0.030 & 0.557 ± 0.017 \\
+ & statis_dual_wass_eigen & 0.091 ± 0.008 & 0.014 ± 0.001 & 0.309 ± 0.028 & 0.488 ± 0.011 \\
+ & statis_dual_wass_weight & 0.089 ± 0.008 & 0.014 ± 0.001 & 0.306 ± 0.027 & 0.488 ± 0.011 \\
+ & synthpop_cart & 0.126 ± 0.013 & \cellcolor{mygreen}0.007 ± 0.002 & 0.321 ± 0.032 & 0.562 ± 0.017 \\
+ & synthpop_norm & \cellcolor{myred}0.351 ± 0.017 & \cellcolor{myred}0.045 ± 0.005 & \cellcolor{myred}0.549 ± 0.021 & \cellcolor{myred}1.121 ± 0.018 \\
+\cline{1-6}
+\multirow[t]{9}{*}{Non Linear 5000} & avatar_ncp=4 & \cellcolor{mygreen}0.043 ± 0.001 & 0.002 ± 0.000 & 0.264 ± 0.008 & \cellcolor{mygreen}0.253 ± 0.002 \\
+ & mixture_energy & 0.066 ± 0.003 & \cellcolor{mygreen}0.001 ± 0.000 & 0.254 ± 0.009 & 0.337 ± 0.009 \\
+ & mixture_wasserstein & 0.060 ± 0.002 & \cellcolor{mygreen}0.001 ± 0.000 & \cellcolor{mygreen}0.242 ± 0.009 & 0.371 ± 0.007 \\
+ & statis_dual_energy_eigen & 0.077 ± 0.004 & \cellcolor{mygreen}0.001 ± 0.000 & 0.354 ± 0.015 & 0.324 ± 0.009 \\
+ & statis_dual_energy_weight & 0.076 ± 0.003 & \cellcolor{mygreen}0.001 ± 0.000 & 0.347 ± 0.013 & 0.323 ± 0.008 \\
+ & statis_dual_wass_eigen & 0.054 ± 0.004 & 0.002 ± 0.000 & 0.322 ± 0.020 & 0.257 ± 0.003 \\
+ & statis_dual_wass_weight & 0.050 ± 0.004 & 0.002 ± 0.000 & 0.305 ± 0.021 & 0.255 ± 0.002 \\
+ & synthpop_cart & 0.073 ± 0.002 & \cellcolor{mygreen}0.001 ± 0.000 & 0.333 ± 0.010 & 0.323 ± 0.008 \\
+ & synthpop_norm & \cellcolor{myred}0.224 ± 0.004 & \cellcolor{myred}0.043 ± 0.002 & \cellcolor{myred}0.551 ± 0.007 & \cellcolor{myred}1.034 ± 0.007 \\
+\cline{1-6}
+\bottomrule
+\end{tabular}

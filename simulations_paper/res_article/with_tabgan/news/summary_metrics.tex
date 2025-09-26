@@ -1,0 +1,49 @@
+\begin{tabular}{llllll}
+\toprule
+ & Metric & metric_dcr & metric_energy_scaled & metric_nndr & metric_wasserstein_scaled \\
+Dataset & Method &  &  &  &  \\
+\midrule
+\multirow[t]{9}{*}{Breast Cancer} & avatar_ncp=4 & 1.122 ± 0.015 & 0.144 ± 0.003 & \cellcolor{myred}0.858 ± 0.008 & 2.484 ± 0.009 \\
+ & mixture_energy & \cellcolor{mygreen}0.000 ± 0.000 & 0.046 ± 0.012 & nan ± nan & 2.482 ± 0.107 \\
+ & mixture_wasserstein & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{mygreen}0.038 ± 0.010 & nan ± nan & 2.555 ± 0.093 \\
+ & statis_dual_energy_eigen & \cellcolor{myred}2.285 ± 0.517 & 0.092 ± 0.012 & 0.763 ± 0.145 & \cellcolor{myred}3.596 ± 0.393 \\
+ & statis_dual_energy_weight & 2.057 ± 0.426 & 0.078 ± 0.013 & 0.758 ± 0.134 & 3.347 ± 0.307 \\
+ & statis_dual_wass_eigen & 0.940 ± 0.129 & \cellcolor{myred}0.159 ± 0.039 & 0.443 ± 0.056 & 2.719 ± 0.211 \\
+ & statis_dual_wass_weight & 0.796 ± 0.085 & 0.149 ± 0.036 & 0.365 ± 0.027 & 2.626 ± 0.183 \\
+ & synthpop_norm & 1.948 ± 0.040 & 0.076 ± 0.011 & 0.781 ± 0.013 & 3.343 ± 0.026 \\
+ & tabgan & \cellcolor{mygreen}0.000 ± 0.000 & 0.117 ± 0.025 & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{mygreen}2.068 ± 0.148 \\
+\cline{1-6}
+\multirow[t]{9}{*}{Linear 
+ Hight Correlation} & avatar_ncp=4 & 0.045 ± 0.003 & 0.006 ± 0.000 & 0.274 ± 0.023 & \cellcolor{mygreen}0.299 ± 0.006 \\
+ & mixture_energy & 0.014 ± 0.020 & 0.008 ± 0.004 & nan ± nan & 0.390 ± 0.025 \\
+ & mixture_wasserstein & \cellcolor{mygreen}0.000 ± 0.000 & 0.007 ± 0.003 & nan ± nan & 0.405 ± 0.022 \\
+ & statis_dual_energy_eigen & \cellcolor{myred}0.174 ± 0.046 & 0.010 ± 0.004 & \cellcolor{myred}0.503 ± 0.025 & \cellcolor{myred}0.570 ± 0.094 \\
+ & statis_dual_energy_weight & 0.123 ± 0.030 & \cellcolor{mygreen}0.005 ± 0.001 & 0.458 ± 0.031 & 0.400 ± 0.043 \\
+ & statis_dual_wass_eigen & 0.143 ± 0.009 & 0.008 ± 0.001 & 0.496 ± 0.021 & 0.514 ± 0.026 \\
+ & statis_dual_wass_weight & 0.131 ± 0.007 & 0.007 ± 0.001 & 0.484 ± 0.020 & 0.463 ± 0.018 \\
+ & synthpop_norm & 0.099 ± 0.007 & 0.008 ± 0.004 & 0.375 ± 0.024 & 0.403 ± 0.021 \\
+ & tabgan & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{myred}0.037 ± 0.014 & \cellcolor{mygreen}0.000 ± 0.000 & 0.523 ± 0.054 \\
+\cline{1-6}
+\multirow[t]{9}{*}{Linear 
+ Low Correlation} & avatar_ncp=4 & 0.108 ± 0.009 & 0.021 ± 0.001 & 0.310 ± 0.023 & 0.555 ± 0.007 \\
+ & mixture_energy & 0.013 ± 0.038 & 0.010 ± 0.003 & nan ± nan & 0.643 ± 0.035 \\
+ & mixture_wasserstein & \cellcolor{mygreen}0.000 ± 0.000 & 0.011 ± 0.004 & nan ± nan & 0.601 ± 0.029 \\
+ & statis_dual_energy_eigen & \cellcolor{myred}0.339 ± 0.018 & 0.010 ± 0.003 & \cellcolor{myred}0.537 ± 0.022 & \cellcolor{myred}0.823 ± 0.031 \\
+ & statis_dual_energy_weight & 0.302 ± 0.017 & \cellcolor{mygreen}0.008 ± 0.002 & 0.518 ± 0.022 & 0.743 ± 0.018 \\
+ & statis_dual_wass_eigen & 0.121 ± 0.095 & \cellcolor{myred}0.035 ± 0.015 & 0.187 ± 0.115 & 0.568 ± 0.095 \\
+ & statis_dual_wass_weight & 0.120 ± 0.094 & \cellcolor{myred}0.035 ± 0.015 & 0.184 ± 0.115 & 0.564 ± 0.089 \\
+ & synthpop_norm & 0.257 ± 0.013 & \cellcolor{mygreen}0.008 ± 0.002 & 0.479 ± 0.024 & 0.711 ± 0.011 \\
+ & tabgan & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{myred}0.035 ± 0.014 & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{mygreen}0.473 ± 0.056 \\
+\cline{1-6}
+\multirow[t]{9}{*}{Non Linear} & avatar_ncp=4 & 0.156 ± 0.007 & 0.025 ± 0.001 & 0.527 ± 0.026 & 0.634 ± 0.006 \\
+ & mixture_energy & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{mygreen}0.013 ± 0.003 & \cellcolor{mygreen}0.000 ± 0.000 & 0.675 ± 0.047 \\
+ & mixture_wasserstein & \cellcolor{mygreen}0.000 ± 0.000 & 0.014 ± 0.004 & nan ± nan & 0.684 ± 0.047 \\
+ & statis_dual_energy_eigen & 0.149 ± 0.031 & 0.023 ± 0.003 & 0.430 ± 0.103 & 0.652 ± 0.042 \\
+ & statis_dual_energy_weight & 0.146 ± 0.038 & 0.022 ± 0.003 & 0.420 ± 0.125 & 0.648 ± 0.049 \\
+ & statis_dual_wass_eigen & 0.120 ± 0.044 & 0.030 ± 0.011 & 0.327 ± 0.143 & 0.668 ± 0.084 \\
+ & statis_dual_wass_weight & 0.114 ± 0.048 & 0.029 ± 0.011 & 0.310 ± 0.154 & 0.662 ± 0.075 \\
+ & synthpop_norm & \cellcolor{myred}0.353 ± 0.016 & 0.044 ± 0.005 & \cellcolor{myred}0.553 ± 0.022 & \cellcolor{myred}1.121 ± 0.020 \\
+ & tabgan & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{myred}0.046 ± 0.025 & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{mygreen}0.618 ± 0.149 \\
+\cline{1-6}
+\bottomrule
+\end{tabular}

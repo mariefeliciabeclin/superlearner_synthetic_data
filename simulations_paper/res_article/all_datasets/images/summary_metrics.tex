@@ -1,0 +1,51 @@
+\begin{tabular}{llllll}
+\toprule
+ & Metric & metric_dcr & metric_energy_scaled & metric_nndr & metric_wasserstein_scaled \\
+Dataset & Method &  &  &  &  \\
+\midrule
+\multirow[t]{10}{*}{breast_cancer} & avatar_ncp=4 & 0.280 ± 0.029 & 0.063 ± 0.003 & 0.217 ± 0.021 & \cellcolor{mygreen}1.785 ± 0.024 \\
+ & mixture_energy & 0.758 ± 0.091 & 0.025 ± 0.006 & 0.398 ± 0.048 & 2.706 ± 0.043 \\
+ & mixture_wasserstein & 0.500 ± 0.051 & 0.026 ± 0.006 & 0.285 ± 0.032 & 2.462 ± 0.037 \\
+ & statis_dual_energy_eigen & 1.311 ± 0.027 & \cellcolor{mygreen}0.020 ± 0.005 & 0.738 ± 0.012 & 2.637 ± 0.034 \\
+ & statis_dual_energy_weight & 1.347 ± 0.028 & \cellcolor{mygreen}0.020 ± 0.005 & 0.742 ± 0.013 & 2.698 ± 0.031 \\
+ & statis_dual_wass_eigen & 0.477 ± 0.021 & 0.057 ± 0.003 & 0.333 ± 0.017 & 1.850 ± 0.026 \\
+ & statis_dual_wass_weight & 0.456 ± 0.021 & 0.058 ± 0.003 & 0.323 ± 0.017 & 1.840 ± 0.026 \\
+ & synthpop_cart & 1.360 ± 0.031 & \cellcolor{mygreen}0.020 ± 0.005 & 0.743 ± 0.013 & 2.809 ± 0.036 \\
+ & synthpop_norm & \cellcolor{myred}1.949 ± 0.040 & 0.075 ± 0.011 & \cellcolor{myred}0.781 ± 0.010 & \cellcolor{myred}3.344 ± 0.027 \\
+ & tabgan & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{myred}0.117 ± 0.025 & \cellcolor{mygreen}0.000 ± 0.000 & 2.068 ± 0.148 \\
+\cline{1-6}
+\multirow[t]{10}{*}{highcorr} & avatar_ncp=4 & 0.034 ± 0.004 & 0.005 ± 0.000 & 0.208 ± 0.024 & \cellcolor{mygreen}0.294 ± 0.005 \\
+ & mixture_energy & 0.060 ± 0.006 & 0.007 ± 0.003 & 0.222 ± 0.028 & 0.370 ± 0.017 \\
+ & mixture_wasserstein & 0.058 ± 0.005 & 0.008 ± 0.004 & 0.221 ± 0.026 & 0.370 ± 0.020 \\
+ & statis_dual_energy_eigen & 0.086 ± 0.021 & \cellcolor{mygreen}0.004 ± 0.001 & 0.366 ± 0.046 & 0.338 ± 0.034 \\
+ & statis_dual_energy_weight & 0.085 ± 0.020 & \cellcolor{mygreen}0.004 ± 0.001 & 0.361 ± 0.044 & 0.338 ± 0.034 \\
+ & statis_dual_wass_eigen & 0.077 ± 0.004 & 0.005 ± 0.000 & 0.364 ± 0.021 & 0.308 ± 0.005 \\
+ & statis_dual_wass_weight & 0.075 ± 0.004 & 0.005 ± 0.000 & 0.358 ± 0.022 & 0.307 ± 0.006 \\
+ & synthpop_cart & 0.078 ± 0.006 & 0.006 ± 0.003 & 0.332 ± 0.026 & 0.375 ± 0.017 \\
+ & synthpop_norm & \cellcolor{myred}0.101 ± 0.007 & 0.007 ± 0.003 & \cellcolor{myred}0.380 ± 0.024 & 0.400 ± 0.014 \\
+ & tabgan & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{myred}0.037 ± 0.014 & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{myred}0.523 ± 0.054 \\
+\cline{1-6}
+\multirow[t]{10}{*}{lowcorr} & avatar_ncp=4 & 0.075 ± 0.008 & 0.021 ± 0.001 & 0.223 ± 0.023 & 0.550 ± 0.009 \\
+ & mixture_energy & 0.177 ± 0.018 & 0.010 ± 0.004 & 0.308 ± 0.036 & 0.688 ± 0.015 \\
+ & mixture_wasserstein & 0.133 ± 0.015 & 0.010 ± 0.003 & 0.265 ± 0.028 & 0.643 ± 0.013 \\
+ & statis_dual_energy_eigen & 0.210 ± 0.054 & \cellcolor{mygreen}0.006 ± 0.002 & 0.406 ± 0.075 & 0.664 ± 0.038 \\
+ & statis_dual_energy_weight & 0.213 ± 0.052 & \cellcolor{mygreen}0.006 ± 0.002 & 0.409 ± 0.075 & 0.667 ± 0.037 \\
+ & statis_dual_wass_eigen & 0.120 ± 0.009 & 0.021 ± 0.001 & 0.314 ± 0.024 & 0.559 ± 0.008 \\
+ & statis_dual_wass_weight & 0.119 ± 0.009 & 0.021 ± 0.001 & 0.312 ± 0.024 & 0.558 ± 0.009 \\
+ & synthpop_cart & 0.178 ± 0.014 & 0.007 ± 0.002 & 0.362 ± 0.029 & 0.655 ± 0.011 \\
+ & synthpop_norm & \cellcolor{myred}0.257 ± 0.012 & 0.008 ± 0.002 & \cellcolor{myred}0.474 ± 0.019 & \cellcolor{myred}0.709 ± 0.012 \\
+ & tabgan & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{myred}0.035 ± 0.014 & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{mygreen}0.473 ± 0.056 \\
+\cline{1-6}
+\multirow[t]{10}{*}{nls} & avatar_ncp=4 & 0.077 ± 0.008 & 0.015 ± 0.001 & 0.268 ± 0.026 & \cellcolor{mygreen}0.487 ± 0.010 \\
+ & mixture_energy & 0.119 ± 0.012 & 0.009 ± 0.003 & 0.257 ± 0.027 & 0.616 ± 0.017 \\
+ & mixture_wasserstein & 0.112 ± 0.011 & 0.008 ± 0.002 & 0.253 ± 0.029 & 0.629 ± 0.016 \\
+ & statis_dual_energy_eigen & 0.135 ± 0.012 & \cellcolor{mygreen}0.007 ± 0.002 & 0.347 ± 0.032 & 0.557 ± 0.018 \\
+ & statis_dual_energy_weight & 0.133 ± 0.012 & \cellcolor{mygreen}0.007 ± 0.002 & 0.341 ± 0.030 & 0.557 ± 0.017 \\
+ & statis_dual_wass_eigen & 0.091 ± 0.008 & 0.014 ± 0.001 & 0.309 ± 0.028 & 0.488 ± 0.011 \\
+ & statis_dual_wass_weight & 0.089 ± 0.008 & 0.014 ± 0.001 & 0.306 ± 0.027 & 0.488 ± 0.011 \\
+ & synthpop_cart & 0.126 ± 0.013 & \cellcolor{mygreen}0.007 ± 0.002 & 0.321 ± 0.032 & 0.562 ± 0.017 \\
+ & synthpop_norm & \cellcolor{myred}0.351 ± 0.017 & 0.045 ± 0.005 & \cellcolor{myred}0.549 ± 0.021 & \cellcolor{myred}1.121 ± 0.018 \\
+ & tabgan & \cellcolor{mygreen}0.000 ± 0.000 & \cellcolor{myred}0.046 ± 0.025 & \cellcolor{mygreen}0.000 ± 0.000 & 0.618 ± 0.149 \\
+\cline{1-6}
+\bottomrule
+\end{tabular}
