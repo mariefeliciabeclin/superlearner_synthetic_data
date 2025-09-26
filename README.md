@@ -31,14 +31,13 @@ pip install -r requirements.txt
 # Citation
 
 
+# Contact
+
+If you have questions or need support, feel free to contact me : mariefelicia.beclin@gmail.com
+
 ## License
 
 MIT License © 2025  
-Feel free to use and share this tool for research or clinical applications.
 
 ---
-
-## Contact
-
-If you have questions or need support, feel free to contact me : mariefelicia.beclin@gmail.com
 
