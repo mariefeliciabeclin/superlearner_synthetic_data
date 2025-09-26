@@ -1,4 +1,5 @@
 # Super learner for tabular synthetic data generation
+This repository is the code used to produce and test superlearner for synthetic data generation. Methods and simulations are deeply describe in tour paper *Super learner for tabular synthetic data generation*. Feel free to read it for more details.
 
 
 ```
@@ -14,12 +15,30 @@ superlearner_synthetic_data/
 
 
 # Installation
-Clone the repository:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/superlearner_synthetic_data.git
 cd my-project
 
+2. Make sure you have [Python](https://www.python.org/downloads/) installed.
+3. Install the necessary Python libraries:
+
+```bash
+pip install -r requirements.txt
+```
 
 # Citation
+
+
+## License
+
+MIT License © 2025  
+Feel free to use and share this tool for research or clinical applications.
+
+---
+
+## Contact
+
+If you have questions or need support, feel free to contact me : mariefelicia.beclin@gmail.com
 
